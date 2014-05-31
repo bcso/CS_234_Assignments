@@ -1,3 +1,6 @@
+"""CS 234 Assignment 2 Question 1b - Testing assumptions: Stock.py
+"""
+
 from Stock import Stock
 
 def testStock():

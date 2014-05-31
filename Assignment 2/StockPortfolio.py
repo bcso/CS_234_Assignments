@@ -1,3 +1,6 @@
+"""CS 234 Assignment 2 Question 2a - Using the StockExchange ADT
+"""
+
 from StockExchangeList import *
 from Stock import *
 

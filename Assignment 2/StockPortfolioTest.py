@@ -1,3 +1,6 @@
+"""CS 234 Assignment 2 Question 2b - StockPortfolio test class
+"""
+
 from StockPortfolio import *
 from StockExchangeList import *
 

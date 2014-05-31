@@ -1,4 +1,4 @@
-"""CS 234 Assignment 1 Question 1 - a simple web server
+"""CS 234 Assignment 2 Question 3 - Course Project
 """
 
 import socket

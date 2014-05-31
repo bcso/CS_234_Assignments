@@ -1,3 +1,5 @@
+"""CS 234 Assignment 2 Question 1a - Testing assumptions: Stock.py
+"""
 class Stock:
    """
    A data type representing a single stock
