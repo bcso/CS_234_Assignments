@@ -1,22 +1,24 @@
 from StockPortfolio import *
+from StockExchangeList import *
 
-exch = StockPortfolio("stock_data.txt")
+portfolio = StockPortfolio("stock_data.txt")
+exch = StockExchange("stock_data.txt")
 
-exch.BuyStock("DAY.DB.C-T", 12)
-print("Total Expenditures... " + str(exch.Expenditures()))
-print("Total value of holdings... " + str(exch.ValueOfHoldings()) + "\n")
+portfolio.BuyStock("DAY.DB.C-T", 12)
+assert portfolio.Expenditures() == (exch.getPrice("DAY.DB.C-T") * 12)
+assert portfolio.ValueOfHoldings() == (exch.getPrice("DAY.DB.C-T") * 12)
 
-exch.BuyStock("ABX-T", 7)
-print("Total Expenditures... " + str(exch.Expenditures()))
-print("Total value of holdings... " + str(exch.ValueOfHoldings()) + "\n")
+portfolio.BuyStock("ABX-T", 7)
+assert portfolio.Expenditures() == (exch.getPrice("DAY.DB.C-T") * 12 + exch.getPrice("ABX-T") * 7)
+assert portfolio.ValueOfHoldings() == (exch.getPrice("DAY.DB.C-T") * 12 + exch.getPrice("ABX-T") * 7)
 
-exch.SellStock("DAY.DB.C-T", 5)
-print("Total Expenditures... " + str(exch.Expenditures()))
-print("Total value of holdings... " + str(exch.ValueOfHoldings()) + "\n")
+portfolio.SellStock("DAY.DB.C-T", 5)
+assert portfolio.Expenditures() == (exch.getPrice("DAY.DB.C-T") * 12 + exch.getPrice("ABX-T") * 7 - exch.getPrice("DAY.DB.C-T") * 5)
+assert portfolio.ValueOfHoldings() == (exch.getPrice("DAY.DB.C-T") * (12-5) + exch.getPrice("ABX-T") * 7)
 
-print("Profit is... " + str(exch.Profit()))
+# Value of all stocks is equal to the amount you have paid for them, there is not change in stock value
+assert str(portfolio.Profit() == 0)
 
-#Sell stock you don't own
-#exch.SellStock("RIM-T", 12)
-# print("Total Expenditures... " + str(exch.Expenditures()))
-# print("Total value of holdings... " + str(exch.ValueOfHoldings()))
+print("Total Expenditures... " + str(portfolio.Expenditures()))
+print("Total ValueOfHoldings... " + str(portfolio.ValueOfHoldings()))
+print("Profit is... " + str(portfolio.Profit()))

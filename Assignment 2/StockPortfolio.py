@@ -52,9 +52,7 @@ class StockPortfolio:
 		elif type(numShares) != type(1):
 			raise TypeError, "Number of Shares must be an integer"
 		else:
-
 			price = self._exch.getPrice(aSymbol)
-			print("Price per share: " + str(price))
 			totalPrice = numShares * price
 			self.totalExpenditures += totalPrice
 			if (aSymbol in self._valueOfHoldings) == False:
@@ -80,7 +78,6 @@ class StockPortfolio:
 			else:
 				#Calculate total price for number of shares to buy
 				price = self._exch.getPrice(aSymbol)
-				print("Price per share: " + str(price))
 				totalPrice = numShares * price
 				self.totalExpenditures -= totalPrice
 
@@ -111,12 +108,17 @@ class StockPortfolio:
 		for key in self._valueOfHoldings:
 			currentValue = self._exch.getPrice(key) * float(self._valueOfHoldings[key])
 			self.totalCurrentValue += currentValue
-
 		return self.totalCurrentValue		
 
 	def Profit(self):
 		"""
 		Post-condition: Return the amount of totalExpenditures taken away from the total value of the stock holdings
 		"""	
+
+		# Calculate total value of holdings if it has not been done before.
+		self.totalCurrentValue = 0.0
+		for key in self._valueOfHoldings:
+			currentValue = self._exch.getPrice(key) * float(self._valueOfHoldings[key])
+			self.totalCurrentValue += currentValue
 		return self.totalCurrentValue - self.totalExpenditures 		
 
