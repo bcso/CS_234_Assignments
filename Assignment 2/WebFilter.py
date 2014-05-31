@@ -34,21 +34,23 @@ def messageInHTML(aMessageTitle, aMessage):
    Precondition: A string message and title
    Postcondition: A formatted string in HTML format containing the message and title 
    """
-   
-   return """<html>
-   <head>
-   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-   <title>WebFilter</title>
-   </head>
-   <body>
-   <h1>
-      %s
-   </h1>
-   <p>
-      %s
-   </p>
-   </body>
-   </html>""" % (aMessageTitle, aMessage)
+   if (type(aMessage) != "s") or (type(aMessageTitle) != "s"):
+      raise TypeError, "message and message title must be string types"
+   else: 
+      return """<html>
+      <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <title>WebFilter</title>
+      </head>
+      <body>
+      <h1>
+         %s
+      </h1>
+      <p>
+         %s
+      </p>
+      </body>
+      </html>""" % (aMessageTitle, aMessage)
 
 def runWebFilter(aPort):
    """
