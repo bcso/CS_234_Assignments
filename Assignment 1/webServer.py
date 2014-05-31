@@ -51,11 +51,9 @@ def runWebFilter(HTTP_port):
       for i in range(1):
          # Accept a socket connection with a client
          connection, addr = aSocket.accept()     
-         print('Got connection from ' + str(addr))
-         print('The message is:')
-         print(connection.recv(BUFFER_SIZE))
-         message = messageInHTML('This is what the browser sent...', 'THIS IS THE MESSAGE')
-         print(message)
+         print('Got connection from ' + str(addr))         
+         msg = connection.recv(BUFFER_SIZE))
+         message = messageInHTML('This is what the browser sent...', msg)         
          connection.sendall(message)
    
 myResponse = """<html>

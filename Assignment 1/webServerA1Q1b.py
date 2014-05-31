@@ -39,7 +39,7 @@ def runWebFilter(aPort):
       print('Got connection from ' + str(addr))
       
       # Save the message received in msg
-      msg =connection.recv(BUFFER_SIZE)
+      msg = connection.recv(BUFFER_SIZE)
 
       # Send back the message in HTML format
       connection.sendall(messageInHTML("This is what the browser sent...", msg))
