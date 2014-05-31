@@ -1,6 +1,5 @@
 from StockExchangeList import *
 from Stock import *
-import os
 
 class StockPortfolio:
 
@@ -98,12 +97,16 @@ class StockPortfolio:
 					self._valueOfHoldings[aSymbol] -= numShares
 
 	def Expenditures(self):
+		"""
+		Post-condition: return the total expenditures used to buy stock
+		"""
 		return self.totalExpenditures
 
 	def ValueOfHoldings(self):
-		# For all the values(#stock) in each key (stock symbol owned), calculate the total value and sum across all keys
-		# by using the current stock price
-
+		"""
+		Post-condition: For all the values(#stock) in each key (stock symbol owned), calculate the total value and sum across all keys
+						by using the current stock price
+		"""
 		self.totalCurrentValue = 0.0
 		for key in self._valueOfHoldings:
 			currentValue = self._exch.getPrice(key) * float(self._valueOfHoldings[key])
@@ -112,6 +115,8 @@ class StockPortfolio:
 		return self.totalCurrentValue		
 
 	def Profit(self):
-		return self.totalCurrentValue - self.totalExpenditures 
-		pass
+		"""
+		Post-condition: Return the amount of totalExpenditures taken away from the total value of the stock holdings
+		"""	
+		return self.totalCurrentValue - self.totalExpenditures 		
 
