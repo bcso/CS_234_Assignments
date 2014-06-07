@@ -110,5 +110,3 @@ def getHost(anHTTPcmd):
                   break
       except socket.error:
          raise Exception
-
-runWebFilter(8080)
