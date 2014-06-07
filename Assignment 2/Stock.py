@@ -19,7 +19,9 @@ class Stock:
       Preconditions: aName and aSymbol are strs 
       Assumptions: if supplied price, low and high are non-negative floats
                    if supplied volume is a non-negative int
-                   low <= price <= high
+                   Strings aName and aSymbol cannot be empty
+                   Variables aName and aSymbol have to be Strings
+                   It is assumed that: low < price < high
       Postconditions: construct a stock data type with aName and aSymbol
       """
 
