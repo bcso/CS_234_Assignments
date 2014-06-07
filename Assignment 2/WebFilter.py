@@ -34,8 +34,10 @@ def messageInHTML(aMessageTitle, aMessage):
    Precondition: A string message and title
    Postcondition: A formatted string in HTML format containing the message and title 
    """
-   if (type(aMessage) != "s") or (type(aMessageTitle) != "s"):
-      raise TypeError, "message and message title must be string types"
+   if (type(aMessage) != type("s")):
+      raise TypeError, "Message must be a string!"
+   elif (type(aMessageTitle) != type("s")):
+      raise TypeError, "Message title must be a string!"
    else: 
       return """<html>
       <head>
