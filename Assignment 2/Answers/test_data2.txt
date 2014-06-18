@@ -1,0 +1,4 @@
+# TSX Data
+# Source (Created September 1, 2011 at approximately 3:45pm): http://investdb.theglobeandmail.com/invest/investSQL/gx.stock_report?pi_report_type=DETAIL&pi_industry=All&pi_exchange_code=T&pi_security_type=All&pi_action=stockFilter&pi_alpha_search=FULL&pi_display_alpha_search_yn=Y
+Apple Computers 	AAPL 	650.00 	-0.09 	-0.38 	15:29 	600.00 	700.00 	2,464,757.00 	69.30 	21.40 	Stock today Chart
+Google Inc 	GOOG 	550.00 	-0.10 	-0.80 	15:29 	500.00	600.00 	2,102,201.00 	19.29 	11.85 	Stock today Chart
