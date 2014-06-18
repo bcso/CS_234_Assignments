@@ -24,4 +24,4 @@ sdict.reset()
 
 assert len(sdict._stringDict) == 0
 
-print ("\nAll tests have passed.")
+print ("All tests have passed.")
