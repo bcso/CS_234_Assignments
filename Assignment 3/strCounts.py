@@ -19,9 +19,10 @@ class StringCounts:
 		else it will increment the count of the string up by one if it already exists.
 		"""
 
+		#Raise errors accordingly
 		if type(aString) != type("a"):
 			raise TypeError, "Input string must be a string type!"
-		elif aString == "":
+		elif len(aString) == 0:
 			raise ValueError, "Input string cannot be empty!"
 
 		#Check if the string does not exist in the dictionary
@@ -54,3 +55,4 @@ class StringCounts:
 		"""
 
 		self._stringDict = {}
+
