@@ -1,4 +1,4 @@
-"""CS 234 Assignment 3 Question 1a
+"""CS 234 Assignment 3 Question 2a
 
 This class initiates an object that keeps track of strings, and how many times they have appeared.
 """

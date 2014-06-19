@@ -1,3 +1,8 @@
+"""CS 234 Assignment 3 Question 2b
+
+This is a testing file to test strCounts.py
+"""
+
 from strCounts import *
 
 sdict = StringCounts()
