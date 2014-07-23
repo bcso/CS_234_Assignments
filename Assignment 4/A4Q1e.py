@@ -184,11 +184,3 @@ class LinkedList:
       """
 
       return self.size
-
-
-a = LinkedList()
-a.append(2.0)
-a.append('good')
-a.append(2)
-a.append('b')
-a.append(True)
